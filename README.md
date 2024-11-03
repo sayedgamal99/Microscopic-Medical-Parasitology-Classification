@@ -174,6 +174,8 @@ Furthermore, in a recent competition, our model achieved a notable performance:
   - **Score**: Achieved a public score of 0.00847 and a private score of `0.00698`.
   - **Position**: Secured the `2nd` place in the competition.🎉🎉🎉🎉
 
+<img src="image.png" alt="competition leaderboard screanshot" style="display: block; margin: auto; max-width: 50%; height: auto;">
+
 <br>
 <br>
 <br>
