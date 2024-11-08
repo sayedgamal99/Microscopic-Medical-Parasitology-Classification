@@ -103,7 +103,7 @@ NUM_DISPLAYED = 9
 @st.cache_resource
 def load_model_safely():
     try:
-        model = load_model('best_model_v2.0.keras')
+        model = load_model('models/model.keras')
         logger.info("Model loaded successfully")
         return model
     except Exception as e:
