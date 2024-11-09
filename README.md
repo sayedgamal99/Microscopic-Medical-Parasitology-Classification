@@ -4,44 +4,6 @@
 
 [![Project Workflow](https://img.shields.io/badge/Project_Workflow-README-blue)](https://github.com/sayedgamal99/Microscopic-Medical-Parasitology-Classification/blob/master/README-Workflow.md)
 
-## Usage Instructions
-
-This application can be run using **Docker** or by setting up a **local environment**. Follow the steps below for each method.
-
-### Using Docker
-
-<br>
-
-<p align="left">
-    <img src="images/docker.png" alt="docker logo image" width="70"/>
-</p>
-
-Running the application with Docker is straightforward and provides an isolated environment. Make sure Docker is installed and running on your machine.
-
-1. **Pull the Docker Image**:
-
-   Pull the pre-built Docker image from Docker Hub:
-
-   ```bash
-   docker pull sayedgamal/micro-parasite-classifier:v1.0
-   ```
-
-2. **Run the Docker Container**:
-
-   Launch the container using the command below. This command will expose the app on port 8501 of your localhost:
-
-   ```bash
-   docker run -d -p 8501:8501 sayedgamal/micro-parasite-classifier:v1.0
-   ```
-
-3. **Access the Application**:
-
-   Open a web browser and navigate to `http://localhost:8501` to access the Streamlit application.
-
----
-
-<br>
-<br>
 
 
 ## Usage Instructions
