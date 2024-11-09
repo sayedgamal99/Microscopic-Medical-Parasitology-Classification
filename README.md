@@ -14,7 +14,7 @@ You can choose to run the application using **Docker** or by setting up a **loca
 ### Running with Docker
 
 <p align="left">
-    <img src="images/docker.png" alt="Docker Logo" width="70"/>
+    <img src="images/docker.png" alt="Docker Logo" width="150"/>
 </p>
 
 Running the application with Docker is simple and ensures an isolated environment. Ensure Docker is installed and running on your machine.
