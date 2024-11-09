@@ -43,65 +43,107 @@ Running the application with Docker is straightforward and provides an isolated 
 <br>
 <br>
 
-## Using Local Installation
 
-Follow these steps to set up and run the application locally. Ensure you have `pip` installed.
+## Usage Instructions
+
+You can choose to run the application using **Docker** or by setting up a **local environment**. Follow the instructions for the method you prefer.
+
+
+### Running with Docker
 
 <p align="left">
-    <img src="images/vnev.png" alt="Virtual Environment image" width="150"/>
+    <img src="images/docker.png" alt="Docker Logo" width="70"/>
 </p>
 
-### 1. Clone the Repository
+Running the application with Docker is simple and ensures an isolated environment. Ensure Docker is installed and running on your machine.
+
+#### 1. Pull the Docker Image
+
+To pull the pre-built Docker image, run the following command:
+
+```bash
+docker pull sayedgamal/micro-parasite-classifier:v1.0
+```
+
+#### 2. Run the Docker Container
+
+Launch the container using this command, which will expose the app on port 8501 of your localhost:
+
+```bash
+docker run -d -p 8501:8501 sayedgamal/micro-parasite-classifier:v1.0
+```
+
+#### 3. Access the Application
+
+Open your web browser and go to [http://localhost:8501](http://localhost:8501) to access the Streamlit application.
+
+---
+
+### Running Locally
+
+Follow these steps to set up and run the application locally. Ensure you have `pip` installed and Python is set up.
+
+<p align="left">
+    <img src="images/vnev.png" alt="Virtual Environment" width="150"/>
+</p>
+
+#### 1. Clone the Repository
+
+Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/sayedgamal99/Microscopic-Medical-Parasitology-Classification.git
 cd Microscopic-Medical-Parasitology-Classification
 ```
 
-### 2. Set Up Virtual Environment
+#### 2. Set Up a Virtual Environment
 
-It's recommended to use a virtual environment to avoid package conflicts:
+It is recommended to create and use a virtual environment to avoid package conflicts:
 
 ```bash
-# Create virtual environment
+# Create a virtual environment
 python -m venv micro_env
 
-# Activate virtual environment
+# Activate the virtual environment
 # For Windows:
 micro_env\Scripts\activate
 # For Unix or MacOS:
 source micro_env/bin/activate
 ```
 
-### 3. Install Dependencies
+#### 3. Install Dependencies
 
-Install the required packages:
+Install the required Python packages listed in `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Download the Model
+#### 4. Download the Model
 
 The model files are hosted on Kaggle. Follow these steps to download them:
 
-1. **Get Kaggle API Credentials**:
+##### a. Get Kaggle API Credentials
 
-   - Go to [You Kaggle Acount](https://www.kaggle.com/account)
-   - Scroll down to the "API" section
-   - Click "Create New API Token" to download `kaggle.json`
-   - Place the downloaded `kaggle.json` file in the project root directory
+1. Go to your [Kaggle Account](https://www.kaggle.com).
+2. Scroll down to the **API** section.
+3. Click **Create New API Token** to download the `kaggle.json` file.
+4. Place the downloaded `kaggle.json` file in the root directory of the project.
 
-2. **Run the Download Script**:
-   ```bash
-   python download_model.py
-   ```
-   This script will:
-   - Verify your Kaggle credentials
-   - Install the Kaggle package if needed
-   - Download and extract the model files to the `models` directory
+##### b. Run the Model Download Script
 
-### 5. Run the Application
+Once you have the `kaggle.json` file in place, run the following command to download the model files:
+
+```bash
+python download_model.py
+```
+
+This script will:
+- Verify your Kaggle credentials.
+- Install the Kaggle package if needed.
+- Download and extract the model files into the `models` directory.
+
+#### 5. Run the Application
 
 Start the Streamlit application:
 
@@ -109,16 +151,14 @@ Start the Streamlit application:
 streamlit run app.py
 ```
 
-### 6. Access the Application
+#### 6. Access the Application
 
-Open your web browser and navigate to:
+Open a web browser and go to:
 
-- URL: `http://localhost:8501`
-- The application should load automatically and be ready for use
+- **URL**: [http://localhost:8501](http://localhost:8501)
 
-<br>
-<br>
+The application should load and be ready for use.
 
-With either method, you’ll have full access to the parasite classification interface. Use the interface to upload images, classify, and explore results using the deep learning model.
 
 ---
+
