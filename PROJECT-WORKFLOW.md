@@ -149,7 +149,7 @@ Key highlights of the project:
 - **Position**: Secured **2nd place** 🏆
 
 <p align="center">
-    <img src="images/image.png" alt="Competition Leaderboard Screenshot" width="500"/>
+    <img src="images/image.png" alt="Competition Leaderboard Screenshot"/>
 </p>
 
 
