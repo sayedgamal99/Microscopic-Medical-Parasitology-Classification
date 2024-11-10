@@ -182,8 +182,6 @@ I appreciate their dedication and hard work in making this project a success!
 <br>
 
 
-This keeps the information brief yet adds a touch of professional polish.
-
 ### Final Words of Gratitude
 
 Thank you for exploring our project! We extend our heartfelt appreciation to all contributors, supporters, and users. Your feedback and contributions drive our improvement. For questions, feedback, or support, please reach out to the project maintainers.

@@ -2,16 +2,15 @@
     <img src="images/app_screanshot_v1.png" alt="Cover - App screenshot"/>
 </p>
 
-[![Installation and Usage Badge](https://img.shields.io/badge/Installation--Usage-README-red)](README.md) 
+[![Installation and Usage Badge](https://img.shields.io/badge/Installation--Usage-README-red)](README.md)
 [![Project Workflow](https://img.shields.io/badge/PROJECT--WORKFLOW-README-blue)](PROJECT-WORKFLOW.md)
 
 # Microscopic Medical Parasitology Classification
 
 An AI-powered application designed to assist medical professionals in diagnosing parasitic infections through microscopic images. This project leverages a deep learning model trained to classify 15 types of parasites, offering a valuable tool in medical parasitology, early diagnosis, and public health.
 
----
-
 ## Table of Contents
+
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Setup and Usage](#setup-and-usage)
@@ -19,13 +18,9 @@ An AI-powered application designed to assist medical professionals in diagnosing
   - [Local Installation](#local-installation)
 - [Technical Details](#technical-details)
 
----
-
 ## Overview
 
 Microscopic analysis plays a crucial role in detecting parasitic infections, but it’s resource-intensive and requires specialized expertise. This project aims to support healthcare professionals by classifying microscopic images of parasites using a trained deep learning model. The model, developed through fine-tuning ResNet101V2, accurately identifies 15 types of parasites, making diagnostics more accessible and efficient.
-
----
 
 ## Project Structure
 
@@ -43,13 +38,9 @@ Microscopic analysis plays a crucial role in detecting parasitic infections, but
 └── utils.py                     # Helper functions for the application
 ```
 
----
-
 ## Setup and Usage
 
 You can choose to run the application using **Docker** or by setting up a **local environment**. Follow the instructions for the method you prefer.
-
----
 
 ### Running with Docker
 
@@ -79,7 +70,8 @@ docker run -d -p 8501:8501 sayedgamal/micro-parasite-classifier:v1.0
 
 Open your web browser and go to [http://localhost:8501](http://localhost:8501) to access the Streamlit application.
 
----
+<br>
+<br>
 
 ### Running Locally
 
@@ -141,6 +133,7 @@ python download_model.py
 ```
 
 This script will:
+
 - Verify your Kaggle credentials.
 - Install the Kaggle package if needed.
 - Download and extract the model files into the `models` directory.
@@ -164,7 +157,6 @@ The application should load and be ready for use.
 <br>
 <br>
 <br>
-
 
 ## Technical Details
 
