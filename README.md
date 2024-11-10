@@ -1,15 +1,15 @@
 <p align="center">
-    <img src="images/app_screanshot_v1.png" alt="Cover - App screanshot" width="600"/>
+    <img src="images/app_screanshot_v1.png" alt="Cover - App screenshot" width="700"/>
 </p>
 
-[![Installation and Usage Badge](https://img.shields.io/badge/Installation%20--%20Usage-README-red)](README.md) 
-[![Project Workflow](https://img.shields.io/badge/Project_Workflow-README-blue)](README-Workflow.md)
+[![Installation and Usage Badge](https://img.shields.io/badge/Installation--Usage-README-red)](README.md) 
+[![Project Workflow](https://img.shields.io/badge/PROJECT--WORKFLOW-README-blue)](PROJECT-WORKFLOW.md)
 
 # Microscopic Medical Parasitology Classification
 
 An AI-powered application designed to assist medical professionals in diagnosing parasitic infections through microscopic images. This project leverages a deep learning model trained to classify 15 types of parasites, offering a valuable tool in medical parasitology, early diagnosis, and public health.
 
-
+---
 
 ## Table of Contents
 - [Overview](#overview)
@@ -17,11 +17,9 @@ An AI-powered application designed to assist medical professionals in diagnosing
 - [Setup and Usage](#setup-and-usage)
   - [Using Docker](#using-docker)
   - [Local Installation](#local-installation)
-- [Dataset and Model Details](#dataset-and-model-details)
-- [Training Process](#training-process)
-- [Conclusion](#conclusion)
+- [Technical Details](#technical-details)
 
-
+---
 
 ## Overview
 
@@ -39,16 +37,19 @@ Microscopic analysis plays a crucial role in detecting parasitic infections, but
 ├── download_model.py            # Script to download model file
 ├── images/                      # Images for README and application
 ├── models/                      # Model directory
-│   └── model.keras              # trained keras model
+│   └── model.keras              # Trained Keras model
 ├── README.md                    # Project README
 ├── requirements.txt             # Python dependencies for the app
 └── utils.py                     # Helper functions for the application
 ```
 
-## Usage Instructions
+---
+
+## Setup and Usage
 
 You can choose to run the application using **Docker** or by setting up a **local environment**. Follow the instructions for the method you prefer.
 
+---
 
 ### Running with Docker
 
@@ -85,7 +86,7 @@ Open your web browser and go to [http://localhost:8501](http://localhost:8501) t
 Follow these steps to set up and run the application locally. Ensure you have `pip` installed and Python is set up.
 
 <p align="left">
-    <img src="images/vnev.png" alt="Virtual Environment" width="150"/>
+    <img src="images/vnev.png" alt="Virtual Environment" width="180"/>
 </p>
 
 #### 1. Clone the Repository
@@ -160,6 +161,13 @@ Open a web browser and go to:
 
 The application should load and be ready for use.
 
+<br>
+<br>
+<br>
+
+
+## Technical Details
+
+For a more in-depth understanding of the technical details, including the model architecture, data preprocessing, and training process, please refer to the [Project Workflow README](PROJECT-WORKFLOW.md).
 
 ---
-
