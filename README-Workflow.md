@@ -2,196 +2,190 @@
     <img src="images/res_connectinos.png" alt="Project Cover Image" width="600"/>
 </p>
 
-[![Installation and Usage Badge](https://img.shields.io/badge/Installation%20--%20Usage-README-red)](https://github.com/sayedgamal99/Microscopic-Medical-Parasitology-Classification/blob/master/README.md)
+[![Installation and Usage Badge](https://img.shields.io/badge/Installation%20--%20Usage-README-red)](README.md) 
+[![Project Workflow](https://img.shields.io/badge/Project_Workflow-README-blue)](README-Workflow.md)
 
-# Outline
 
-- [1 - Context](#1)
-- [2 - Image Data Preprocessing with Keras](#2)
-- [3 - Transfer Learning with ResNet101V2 in Keras](#3)
-- [4 - Training Configuration and Callbacks in Keras](#4)
-- [5 - Conclusion](#5)
 
-<a name='1'></a>
+# Microscopic Medical Parasitology Classification
 
-## 1 - Context
+This repository presents a machine learning framework focused on microscopic parasitic image classification, leveraging deep learning for more accurate and accessible parasitology diagnostics. We employ a meticulously curated dataset covering 15 parasite classes, and use Keras along with transfer learning techniques to create a robust classification model.
 
-**Microscopic Parasite Detection**
 
-In the field of medical parasitology. Our meticulously curated dataset contains microscopic images, expertly annotated into 15 distinct parasite classes. Our objectives include developing **Deep Learning** model to aid medical professionals, enhance diagnostics, and optimize healthcare resources. This project's significance lies in early intervention, resource allocation, and global health impact.
+## Outline
+- [1. Project Context](#1-project-context)
+- [2. Data Description](#2-data-description)
+- [3. Image Data Preprocessing](#3-image-data-preprocessing)
+- [4. Transfer Learning with ResNet101V2](#4-transfer-learning-with-resnet101v2)
+- [5. Training Configuration and Callbacks](#5-training-configuration-and-callbacks)
+- [6. Conclusion and Results](#6-conclusion-and-results)
+- [7. Best Practices & Acknowledgments](#7-best-practices--acknowledgments)
 
-## Data Description :
 
-Microscopic Image Classification Dataset for `Parasite Detection`. This dataset is a valuable resource for the field of medical parasitology and data science. It consists of a diverse collection of labeled microscopic images, each belonging to one of the 15 distinct classes representing various parasitic organisms. In this data description, we provide an overview of the classes, their meanings, and insights into the dataset structure.
 
-1. **Ascariasis** (class_0): Images in this class depict the parasitic infection caused by Ascaris lumbricoides, a type of roundworm.
+<a name="1-project-context"></a>
 
-2. **Babesia** (class_1): This class represents the Babesia genus, which includes parasites that infect red blood cells and can lead to a disease known as babesiosis.
+## 1. Project Context
 
-3. **Capillaria p** (class_2): Images here correspond to Capillaria philippinensis, a parasitic nematode known to infect the intestines.
+In the field of **Medical Parasitology**, early detection of parasitic infections is crucial for effective treatment and management. This project aims to:
+- **Classify Microscopic Images**: Aiding medical professionals in diagnostics with an efficient, deep-learning-based tool.
+- **Optimize Healthcare Resources**: Reduce diagnosis time, enabling better resource allocation.
+- **Enhance Global Health Outcomes**: By improving access to rapid, accurate diagnostics.
 
-4. **Enterobius v** (class_3): Class_3 includes images related to Enterobius vermicularis, commonly referred to as the pinworm, which infests the human gastrointestinal tract.
+**Significance**: This project supports proactive healthcare by facilitating early intervention and resource optimization, especially beneficial in regions with limited access to parasitology expertise.
 
-5. **Epidermophyton floccosum** (class_4): Images in this class pertain to the dermatophyte fungus Epidermophyton floccosum, responsible for causing skin infections.
 
-6. **Fasciolopsis buski** (class_5): Class_5 represents the parasitic trematode Fasciolopsis buski, which infects the human intestines.
 
-7. **Hookworm egg** (class_6): This class contains images of hookworm eggs, representing infections caused by various species of hookworms.
+<a name="2-data-description"></a>
 
-8. **Hymenolepis diminuta** (class_7): Images in this class depict the tapeworm Hymenolepis diminuta, a parasite found in the small intestines of rodents.
+## 2. Data Description
 
-9. **Hymenolepis nana** (class_8): Class_8 represents Hymenolepis nana, a tapeworm that infects humans and rodents.
+### Overview
 
-10. **Leishmania** (class_9): Images in this class are related to Leishmania parasites, which cause a group of diseases called leishmaniasis.
+The dataset used here includes high-quality, expertly annotated microscopic images from **15 distinct parasitic classes**, valuable for both medical diagnostics and data science research. Each class has been detailed below, covering its common health effects, diagnosis methods, and prevalence:
 
-11. **Opisthorchis viverrine** (class_10): This class includes images of Opisthorchis viverrini, a liver fluke that infects humans through the consumption of raw or undercooked fish.
+| Parasite                         | Description                             | Health Effects                                      | Diagnosis Method                                       | Geographic Prevalence              |
+|----------------------------------|-----------------------------------------|----------------------------------------------------|--------------------------------------------------------|------------------------------------|
+| **Ascariasis** (*Ascaris lumbricoides*) | A large roundworm that can grow up to 35 cm long | Can cause malnutrition, especially in children     | Stool sample for distinctive eggs                       | Asia, Africa, Latin America       |
+| **Babesia**                      | Infects red blood cells                 | Causes flu-like symptoms, potentially severe       | Observing shapes in red blood cells                     | Northeastern US, Europe            |
+| **Capillaria philippinensis**    | Small worm with barrel-shaped eggs      | Severe digestive issues, malnutrition               | Stool sample for unique egg shape                       | Southeast Asia                     |
+| **Pinworm** (*Enterobius vermicularis*) | Common in children                   | Intense itching around the anus, especially at night | Scotch tape test for eggs                               | Worldwide, temperate areas        |
+| **Epidermophyton floccosum**     | Skin and nail infection                 | Causes ringworm or athlete’s foot                  | Identification of club-shaped spores                    | Warm regions worldwide             |
+| **Fasciolopsis buski**           | Intestinal flatworm                     | Causes digestive issues, malnutrition              | Large eggs in stool                                     | Asia                               |
+| **Hookworm**                     | Infects through skin                    | Can cause anemia, growth issues in children        | Stool sample for eggs                                   | Tropical, subtropical regions     |
+| **Rat Tapeworm** (*Hymenolepis diminuta*) | Infects rats primarily             | Mild symptoms in humans                           | Stool sample for large, round eggs                      | Worldwide                          |
+| **Dwarf Tapeworm** (*Hymenolepis nana*) | Common in children                 | Reinfection, intensifying symptoms                 | Unique eggs with “polar filaments”                      | Warmer climates worldwide          |
+| **Leishmania**                   | Intracellular parasite                  | Causes skin sores, or serious organ infections      | Observing parasite in white blood cells                 | Mediterranean, South America       |
+| **Opisthorchis viverrini**       | Small liver fluke                       | Chronic liver issues, potential cancer             | Tiny, yellowish eggs in stool                           | Southeast Asia                     |
+| **Paragonimus spp.**             | Lung fluke                              | Mimics tuberculosis, causing chest pain            | Brown eggs in sputum or stool                           | East Asia, Africa, Latin America  |
+| **Trichophyton rubrum**          | Skin and nail infection                 | Long-lasting infections                          | Red color in lab cultures, spores identification       | Cities worldwide                   |
+| **Taenia (Tapeworm)**            | From undercooked meat                   | Digestive issues; pork tapeworm serious            | Radially striped eggs in stool                          | Developing regions worldwide      |
+| **Whipworm** (*Trichuris trichiura*) | Characteristic "barrel-shaped" eggs | Chronic digestive issues, growth delays in kids    | Stool sample for distinctive eggs                       | Tropical regions with poor sanitation |
 
-12. **Paragonimus spp** (class_11): Class_11 represents the Paragonimus genus, which includes lung flukes causing paragonimiasis, a lung infection.
+Sample image data for training can be visualized below:
 
-13. **T. rubrum** (class_12): Images in this class pertain to Trichophyton rubrum, a fungus responsible for various dermatophytosis infections.
+<p align="center">
+    <img src="images/trainingSample.png" alt="Training Sample Image" width="500"/>
+</p>
 
-14. **Taenia spp** (class_13): Class_13 includes images related to the Taenia genus, encompassing tapeworms that infect humans and animals.
 
-15. **Trichuris trichiura** (class_14): This class contains images of Trichuris trichiura, a whipworm that infects the human large intestine.
 
-<br>
-<br>
+<a name="3-image-data-preprocessing"></a>
 
-- here is training data sample:
+## 3. Image Data Preprocessing
 
-![sample](trainingSample.png)
+Image preprocessing is critical for model performance. We used **Keras's ImageDataGenerator** with the following transformations:
 
----
+- **Data Splits**:
+  - **Training Set**: 10,723 images (90%)
+  - **Validation Set**: 1,187 images (10%)
 
-<a name='2'></a>
+- **Preprocessing Steps**:
+  1. **Rescaling**: Normalizes pixel values to the range [0, 1].
+  2. **Data Augmentation**:
+     - **Rotation**: Random rotation up to 20 degrees.
+     - **Horizontal & Vertical Flips**: Introduces variation by flipping images.
+     - **Fill Mode**: Uses nearest neighbor fill for empty pixels created by rotations.
 
-## 2 - Image Data Preprocessing with Keras
+- **Data Flow from Directory**:
+  - Training images: Loaded from 'train-data' directory.
+  - Validation images: Loaded from 'validation-data' directory.
+  - Images are resized to 224x224 with a batch size of 32, using categorical class mode for one-hot encoded labels.
 
-This Part demonstrates how to preprocess image data using Keras's `ImageDataGenerator` for training a deep learning model. The data preprocessing steps applied are:
 
-1. **Rescaling**: The pixel values of the images are rescaled to the range [0, 1] by dividing by 255.
 
-2. **Data Augmentation**:
+<a name="4-transfer-learning-with-resnet101v2"></a>
 
-   - _Rotation_: Random rotation of the image by a maximum of 20 degrees.
-   - _Horizontal Flip_: Randomly flips the image horizontally.
-   - _Vertical Flip_: Randomly flips the image vertically.
-   - _Fill Mode_: Strategy for filling in newly created pixels that may arise during rotation or shifts. 'Nearest' mode is used here which fills the missing pixels by the nearest existing pixel value.
+## 4. Transfer Learning with ResNet101V2
 
-3. **Flow from Directory**: The preprocessed data is generated in batches directly from the directories containing the training and validation images using `flow_from_directory` method of `ImageDataGenerator`.
-   - For the training data, images are fetched from the directory 'train-data'.
-   - For the validation data, images are fetched from the directory 'validation-data'.
+We employ **ResNet101V2** (pre-trained on ImageNet) with a modified classifier to enhance classification accuracy:
 
-Both training and validation data are resized to the target size specified by `target_size`, and the batch size is set to 32. The class mode is set to 'categorical' indicating that the labels are one-hot encoded.
-
-<br>
-<br>
-
----
-
-<a name='3'></a>
-
-## 3 - Transfer Learning with ResNet101V2 in Keras
-
-This Part demonstrates how to utilize transfer learning with ResNet101V2 pre-trained on the ImageNet dataset in Keras.
-
-1. **Base Model Initialization**:
-
-   - The ResNet101V2 model is initialized with the following parameters:
-     - `input_shape`: The shape of input images is set to (224, 224, 3).
-     - `include_top`: Excludes the fully-connected layers at the top of the network, as we intend to add our own classifier.
-     - `weights`: Pre-trained weights are loaded from the 'imagenet' dataset.
+1. **Base Model Setup**:
+   - **Input Shape**: (224, 224, 3)
+   - **Exclude Top Layers**: Allows addition of custom classifier.
 
 2. **Fine-tuning**:
-
-   - The `base_model` is set to trainable, allowing the pre-trained weights to be fine-tuned during training.
+   - The **base model layers** are trainable for gradual fine-tuning.
 
 3. **Model Architecture**:
-   - A Sequential model is constructed with layers stacked sequentially:
-     - `base_model`: The pre-trained ResNet101V2 model is added as the base.
-     - `GlobalAveragePooling2D()`: Global average pooling layer is added to reduce the spatial dimensions of the feature maps.
-     - `Dropout(0.3)`: Dropout layer is added to prevent overfitting.
-     - `Dense(1024, activation='relu')`: Fully connected layer with 1024 units and ReLU activation.
-     - `Dropout(0.3)`: Dropout layer is added again.
-     - `Dense(15, activation='softmax')`: Output layer with 15 units (assuming 15 classes) and softmax activation for multi-class classification.
+   - **Global Average Pooling**: Reduces spatial dimensions.
+   - **Dropout Layers**: Prevents overfitting.
+   - **Fully Connected Layer**: Dense layer with 1024 units.
+   - **Softmax Output**: 15 output units for multi-class classification.
 
-This architecture leverages the powerful feature extraction capabilities of the pre-trained ResNet101V2 model while allowing for customization of the classifier to suit the specific task at hand.
 
-<br>
-<br>
 
----
+<a name="5-training-configuration-and-callbacks"></a>
 
-<a name='4'></a>
+## 5. Training Configuration and Callbacks
 
-## 4 - Training Configuration and Callbacks in Keras
+Several configurations and callbacks enhance the training process:
 
-This Part illustrates the configuration of training settings and various callbacks used during model training in Keras.
-
-1. **Learning Rate Schedule**:
-
-   - The `lr_schedule` function defines a custom learning rate schedule based on the epoch number.
-   - It starts with an initial learning rate (`initial_lr`) of 4.5e-5 and decreases it by a factor of 1.5 every 8 epochs.
+1. **Learning Rate Schedule**: 
+   - Starts at 4.5e-5, decreasing every 8 epochs.
 
 2. **Callbacks**:
-
-   - `LearningRateScheduler`: Adjusts the learning rate dynamically during training based on the custom schedule defined by `lr_schedule`.
-   - `ModelCheckpoint`: Saves the best model to the file 'best_model.h5' based on validation performance.
-   - `EarlyStopping`: Stops training if validation loss does not improve for 12 consecutive epochs, restoring the weights of the best performing model.
+   - **LearningRateScheduler**: Adapts learning rate based on epoch count.
+   - **ModelCheckpoint**: Saves the best-performing model.
+   - **EarlyStopping**: Stops training after 12 epochs of no improvement.
 
 3. **Class Weights**:
+   - Adjusts for class imbalance, passing calculated weights into `model.fit`.
 
-   - Class weights are computed using the `compute_class_weight` function to handle class imbalance in the training data.
-   - The computed class weights are then passed to the `fit` method using the `class_weight` parameter.
 
-4. **Training**:
-   - The `model.fit` method is called to train the model using the specified settings:
-     - `epochs`: Number of training epochs set to 100.
-     - `train_generator`: Training data generator.
-     - `validation_data`: Validation data generator.
-     - `callbacks`: List of callbacks to be applied during training, including the custom learning rate scheduler, model checkpointing, and early stopping.
-     - `class_weight`: Dictionary of class weights to address class imbalance.
 
-These configurations and callbacks enhance the training process by dynamically adjusting learning rates, saving the best model, early stopping to prevent overfitting, and handling class imbalance.
+<a name="6-conclusion-and-results"></a>
 
----
+## 6. Conclusion and Results
+
+Key highlights of the project:
+
+- **Data Preprocessing**: Effective augmentation and scaling.
+- **Model Architecture**: Robust feature extraction through ResNet101V2 with custom classification layers.
+- **Training Configuration**: Dynamic learning rate and early stopping mechanisms to optimize performance.
+
+**Competition Results**:
+- **Score**: Public - 0.00847, Private - 0.00698
+- **Position**: Secured **2nd place** 🏆
+
+<p align="center">
+    <img src="images/image.png" alt="Competition Leaderboard Screenshot" width="500"/>
+</p>
+
+
+
+<a name="7-best-practices--acknowledgments"></a>
+
+## 7. Best Practices & Acknowledgments
+
+### Best Practices
+1. **Efficient Data Loading**:
+   - Batch processing with shuffling.
+   - Use class weights for imbalanced data.
+
+2. **Validation Strategy**:
+   - Use stratified splits and cross-validation.
+
+
+
+### Team
+
+This project was brought to life by the following talented contributors:
+
+- **[Ahmed El-Sharkawy](https://github.com/A7medElsharkawy)** – Developed the input data pipeline and played a key role in building, training, and validating the model.
+- **[Youssef Yasser](https://github.com/youssef-yasser-ali)** – Contributed to the development of the input data pipeline and was involved in building, training, and validating the model.
+
+I appreciate their dedication and hard work in making this project a success!
+
 
 <br>
 <br>
-<br>
 
-<a name='5'></a>
 
-## 5 - Conclusion
+This keeps the information brief yet adds a touch of professional polish.
 
-This README provides an overview of the codebase for training neural network models using Keras, encompassing data preprocessing, model configuration, training, and evaluation. Key highlights include:
+### Final Words of Gratitude
 
-- **Data Preprocessing**: Leveraging the `ImageDataGenerator` class for image data preprocessing, incorporating techniques such as rescaling, rotation, and flips to enhance data diversity and model robustness.
-
-- **Model Architecture**: Demonstrating transfer learning with pre-trained models such as `ResNet101V2`, facilitating feature extraction, followed by custom classifier layers tailored to specific tasks.
-
-- **Training Configuration**: Configuring training settings with dynamic learning rate scheduling, utilizing callbacks for model checkpointing, early stopping, and addressing class imbalance via class weights.
-
-- **Model Evaluation**: Assessing model performance through visualization of metrics such as loss, accuracy, and F1 score over epochs, providing insights into model convergence and generalization.
-
-Furthermore, in a recent competition, our model achieved a notable performance:
-
-- **Competition Performance**:
-  - **Score**: Achieved a public score of 0.00847 and a private score of `0.00698`.
-  - **Position**: Secured the `2nd` place in the competition.🎉🎉🎉🎉
-
-<img src="image.png" alt="competition leaderboard screanshot" style="display: block; margin: auto; max-width: 50%; height: auto;">
-
-<br>
-<br>
-<br>
-
-## Final Word with Thanks
-
-Thank you for taking the time to explore our project's README! We hope this guide has provided you with valuable insights and resources for training neural network models using Keras.
-
-We extend our sincere gratitude to all contributors, supporters, and users who have contributed to the success of this project. Your feedback, suggestions, and contributions are highly appreciated and essential for the continuous improvement of our framework.
-
-If you have any questions, feedback, or need assistance, please feel free to reach out to the project maintainers. We're here to help and support you on your journey with neural networks and machine learning.
+Thank you for exploring our project! We extend our heartfelt appreciation to all contributors, supporters, and users. Your feedback and contributions drive our improvement. For questions, feedback, or support, please reach out to the project maintainers.
 
 ---
