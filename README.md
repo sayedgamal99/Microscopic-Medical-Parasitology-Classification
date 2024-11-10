@@ -2,7 +2,48 @@
     <img src="images/app_screanshot_v1.png" alt="Cover - App screanshot" width="600"/>
 </p>
 
-[![Project Workflow](https://img.shields.io/badge/Project_Workflow-README-blue)](https://github.com/sayedgamal99/Microscopic-Medical-Parasitology-Classification/blob/master/README-Workflow.md)
+[![Installation and Usage Badge](https://img.shields.io/badge/Installation%20--%20Usage-README-red)](README.md) 
+[![Project Workflow](https://img.shields.io/badge/Project_Workflow-README-blue)](README-Workflow.md)
+
+# Microscopic Medical Parasitology Classification
+
+An AI-powered application designed to assist medical professionals in diagnosing parasitic infections through microscopic images. This project leverages a deep learning model trained to classify 15 types of parasites, offering a valuable tool in medical parasitology, early diagnosis, and public health.
+
+
+
+## Table of Contents
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Setup and Usage](#setup-and-usage)
+  - [Using Docker](#using-docker)
+  - [Local Installation](#local-installation)
+- [Dataset and Model Details](#dataset-and-model-details)
+- [Training Process](#training-process)
+- [Conclusion](#conclusion)
+
+
+
+## Overview
+
+Microscopic analysis plays a crucial role in detecting parasitic infections, but it’s resource-intensive and requires specialized expertise. This project aims to support healthcare professionals by classifying microscopic images of parasites using a trained deep learning model. The model, developed through fine-tuning ResNet101V2, accurately identifies 15 types of parasites, making diagnostics more accessible and efficient.
+
+---
+
+## Project Structure
+
+```bash
+.
+├── app.py                       # Main application file
+├── data_samples/                # Sample images for testing
+├── Dockerfile                   # Docker setup for app deployment
+├── download_model.py            # Script to download model file
+├── images/                      # Images for README and application
+├── models/                      # Model directory
+│   └── model.keras              # trained keras model
+├── README.md                    # Project README
+├── requirements.txt             # Python dependencies for the app
+└── utils.py                     # Helper functions for the application
+```
 
 ## Usage Instructions
 
@@ -13,7 +54,7 @@ This application can be run using **Docker** or by setting up a **local environm
 <br>
 
 <p align="left">
-    <img src="images/docker.png" alt="docker logo image" width="70"/>
+    <img src="images/docker.png" alt="docker logo image" width="150"/>
 </p>
 
 Running the application with Docker is straightforward and provides an isolated environment. Make sure Docker is installed and running on your machine.
