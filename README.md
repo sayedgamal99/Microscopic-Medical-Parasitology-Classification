@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="images/app_screanshot_v1.png" alt="Cover - App screenshot" width="700"/>
+    <img src="images/app_screanshot_v1.png" alt="Cover - App screenshot"/>
 </p>
 
 [![Installation and Usage Badge](https://img.shields.io/badge/Installation--Usage-README-red)](README.md) 

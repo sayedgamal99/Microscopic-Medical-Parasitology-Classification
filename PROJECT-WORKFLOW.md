@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="images/res_connectinos.png" alt="Project Cover Image" width="600"/>
+    <img src="images/res_connectinos.png" alt="Project Cover Image"/>
 </p>
 
 [![Installation and Usage Badge](https://img.shields.io/badge/Installation%20--%20Usage-README-red)](README.md) 
