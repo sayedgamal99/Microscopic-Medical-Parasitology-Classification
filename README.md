@@ -28,6 +28,7 @@ Microscopic analysis plays a crucial role in detecting parasitic infections, but
 .
 ├── app.py                       # Main streamlit application file
 └── utils.py                     # Helper functions for the application
+└── microscopic.. .ipynb         # Development notebook
 ├── Dockerfile                   # Docker setup file
 ├── download_model.py            # Script to download model file
 ├── images/                      # Images for READMEs
@@ -44,7 +45,6 @@ Microscopic analysis plays a crucial role in detecting parasitic infections, but
 **🎉 Live Demo Available!**
 
 Explore the live application at [parasiteclassifier.azurewebsites.net](https://parasiteclassifier.azurewebsites.net). This online version allows you to test the model directly in your browser. Due to limited hosting resources, response times may be slower, but the app works seamlessly using the methods below:
-
 
 You can choose to run the application using **Docker** or by setting up a **local environment**. Follow the instructions for the method you prefer.
 
