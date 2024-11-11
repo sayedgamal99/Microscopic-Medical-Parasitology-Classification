@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="images/app_screanshot_v1.png" alt="Cover - App screenshot"/>
+    <img src="images/micro-parasite-classifier-app-screanshot.png" alt="Cover - App screenshot"/>
 </p>
 
 [![Installation and Usage Badge](https://img.shields.io/badge/Installation--Usage-README-red)](README.md)
@@ -39,6 +39,11 @@ Microscopic analysis plays a crucial role in detecting parasitic infections, but
 ```
 
 ## Setup and Usage
+
+**🎉 Live Demo Available!**
+
+Explore the live application at [parasiteclassifier.azurewebsites.net](https://parasiteclassifier.azurewebsites.net). This online version allows you to test the model directly in your browser. Due to limited hosting resources, response times may be slower, but the app works seamlessly using the methods below:
+
 
 You can choose to run the application using **Docker** or by setting up a **local environment**. Follow the instructions for the method you prefer.
 
