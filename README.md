@@ -26,16 +26,17 @@ Microscopic analysis plays a crucial role in detecting parasitic infections, but
 
 ```bash
 .
-├── app.py                       # Main application file
-├── data_samples/                # Sample images for testing
-├── Dockerfile                   # Docker setup for app deployment
+├── app.py                       # Main streamlit application file
+└── utils.py                     # Helper functions for the application
+├── Dockerfile                   # Docker setup file
 ├── download_model.py            # Script to download model file
-├── images/                      # Images for README and application
+├── images/                      # Images for READMEs
+├── data_samples/                # Sample images for testing
 ├── models/                      # Model directory
 │   └── model.keras              # Trained Keras model
-├── README.md                    # Project README
 ├── requirements.txt             # Python dependencies for the app
-└── utils.py                     # Helper functions for the application
+├── README.md                    # Project README for usage and installation
+├── PROJECT-WORKFLOW.md          # Project-workflow README
 ```
 
 ## Setup and Usage
